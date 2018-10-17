@@ -6,37 +6,6 @@ from TreeNode import *
 # TreeNode represents a single node in the tree
 # name is empty if the node is a leaf node, otherwise, it will definitely have a name
 
-class TreeNode:
-    def __init__(self, name="", dict={}):
-        self.name = name
-        self.edges = dict
-        self.answer = "No_answer"
-
-    def add(self, key, root):
-        self.edges[key] = root
-
-    def setAnswer(self, val):
-        self.answer = val
-
-    def setName(self, name):
-        self.name = name
-
-    def setEdges(self, edges):
-        self.edges = edges
-
-def printTree(node):
-    # If on a leaf node, print the answer
-    if (node.name == ""):
-        print("Answer is : "+node.answer)
-        return
-
-    # Else traverse the tree
-    print("Current node: " + node.name)
-    for key in node.edges.keys():
-        print("For currentNode: "+node.name+", going to edge: " +key)
-        printTree(node.edges[key])
-
-
 # returns the entropy of the system, independent of the attributes available
 def rootEntropy(Y):
     diction = {}
